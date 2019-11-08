@@ -1,0 +1,17 @@
+{
+  "name": "shadertoy-backup",
+  "version": "1.0.0",
+  "description": "My personal shader toy projects ported for use in VSCode with GLSL Canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "GLSL",
+    "shaders",
+    "fragment",
+    "opengl"
+  ],
+  "author": "Brendon Conradie",
+  "license": "ISC"
+}
