@@ -54,6 +54,7 @@ float fbm(in vec2 st)
 
 #define black vec3(0.0)
 #define white vec3(1.0)
+
 void main()
 {
   vec2 uv = gl_FragCoord.xy / u_resolution;
@@ -61,19 +62,19 @@ void main()
   
   uv.x *= u_resolution.x / u_resolution.y;
   
-  float c1 = fbm(uv * vec2(5.0) + vec2(t * 0.15, -t * 0.1));
-  c1 = smoothstep(0.5, 0.0, c1) * 1.5;
+  float clouds1 = fbm(uv * vec2(5.0) + vec2(t * 0.15, -t * 0.1));
+  clouds1 = smoothstep(0.5, 0.0, clouds1) * 1.5;
   
-  float c2 = fbm(uv * vec2(2.0) + vec2(t * 0.2, -t * 0.05));
-  c2 = smoothstep(0.7, 0.1, c2);
+  float clouds2 = fbm(uv * vec2(2.0) + vec2(t * 0.2, -t * 0.05));
+  clouds2 = smoothstep(0.7, 0.1, clouds2);
 
-  float c3 = fbm(uv * vec2(4.0) + vec2(t * 0.1,  -t * 0.1));
-  c3 = smoothstep(0.5, 0.0, c3);
+  float clouds3 = fbm(uv * vec2(4.0) + vec2(t * 0.1,  -t * 0.1));
+  clouds3 = smoothstep(0.5, 0.0, clouds3);
   
-  vec3 composite = vec3(mix(mix(c1, c3, 0.5), c2, 0.5));
-  vec3 b = vec3(0.15, 0.35, 0.75);
+  vec3 composite = vec3(mix(mix(clouds1, clouds3, 0.5), clouds2, 0.5));
+  vec3 bgColor = vec3(0.15, 0.35, 0.75);
   
-  composite += b * (1.0 - composite);
+  composite += bgColor * (1.0 - composite);
   composite = clamp(composite, black, white);
   
   gl_FragColor = vec4(composite, 1.0);
