@@ -5,6 +5,7 @@
 
 ### **Added**
 - clouds shader
+- raindrops shader
 <hr>
 
 ## 08/11/2019
