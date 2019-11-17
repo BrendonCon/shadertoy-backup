@@ -8,6 +8,7 @@
 ### **Added**
 - .gitignore
 - vscode author settings
+- MIT license added
 
 ## 10/11/2019
 
