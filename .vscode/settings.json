@@ -1,0 +1,7 @@
+{
+  "editor.rulers": [80],
+  "editor.codeLens": true,
+  "editor.minimap.enabled": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "files.trimFinalNewlines": true
+}
