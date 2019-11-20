@@ -1,6 +1,6 @@
 {
   "name": "shadertoy-backup",
-  "version": "1.0.0",
+  "version": "1.3.0",
   "description": "My personal shader toy projects ported for use in VSCode with GLSL Canvas",
   "main": "",
   "scripts": {},
