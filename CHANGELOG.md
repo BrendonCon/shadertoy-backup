@@ -1,6 +1,7 @@
 # CHANGELOG
 
 ## **[1.4.0]** - 23/11/2019
+
 ### **Added**
 - Template `glsl` shader
 
