@@ -3,15 +3,13 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 
-float rand(in vec2 co)
-{
+float rand(in vec2 co) {
   return fract(sin(dot(co.xy ,vec2(12.9898, 78.233))) * 43758.5453) - 0.5;
 }
 
 const float layers = 7.0;
 
-void main()
-{
+void main() {
   vec2 uv = gl_FragCoord.xy / u_resolution * 2.0 - 1.0;
   float t = u_time;
   
@@ -21,8 +19,7 @@ void main()
   float baseScale = 1.0;
   vec3 col = vec3(0.0);
   
-  for (float i = 0.0; i < layers; i++) 
-  {
+  for (float i = 0.0; i < layers; i++) {
     float n = i + 1.0;
     vec2 uv = uv * (n * baseScale + 1.0 / 4.0);
     float z = i / layers;

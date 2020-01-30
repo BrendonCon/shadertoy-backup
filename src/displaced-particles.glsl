@@ -3,18 +3,15 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 
-float rand(float seed)
-{
+float rand(float seed) {
   return fract(sin(seed) * 1000.0);
 }
 
-float hash(vec2 p) 
-{ 
+float hash(vec2 p) { 
   return fract(1e4 * sin(17.0 * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x)))); 
 }
 
-float noise(in vec2 uv) 
-{
+float noise(in vec2 uv) {
   vec2 i = floor(uv);
   vec2 f = fract(uv);
 
@@ -30,8 +27,7 @@ float noise(in vec2 uv)
             (d - b) * u.x * u.y;
 }
 
-void main()
-{
+void main() {
   vec2 uv = gl_FragCoord.xy / u_resolution * 2.0 - 1.0;
   float t = u_time * 0.5;
   
@@ -47,8 +43,7 @@ void main()
   vec3 bgColor = vec3(0.2, 0.1, 0.3);
   vec3 col = vec3(abs(uv.y)) * 0.01 + bgColor + vignette;
   
-  for (float i = 0.0; i < 100.0; i++) 
-  {
+  for (float i = 0.0; i < 100.0; i++) {
     float seed = i + 1.0;
     float x = (rand(i) - 0.5) * 3.0;
     float y = (rand(i * 100.0)- 0.5)  * 2.0;

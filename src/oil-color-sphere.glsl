@@ -6,8 +6,7 @@ uniform float u_time;
 const int AMOUNT = 10;
 const float SCALE = 10.0;
 
-void main() 
-{
+void main() {
   vec2 uv = gl_FragCoord.xy / u_resolution - 0.5;
 	float ar = u_resolution.x / u_resolution.y;
 
@@ -21,11 +20,10 @@ void main()
 
   float len;
   
-  for (int i = 0; i < AMOUNT; i++) 
-  {
-      len = length(uv);
-      uv.x -= cos(uv.y + sin(len) + u_time * 0.5) + cos(u_time / 9.0);
-      uv.y += sin(uv.x + cos(len)) + sin(u_time / 10.0);
+  for (int i = 0; i < AMOUNT; i++) {
+    len = length(uv);
+    uv.x -= cos(uv.y + sin(len) + u_time * 0.5) + cos(u_time / 9.0);
+    uv.y += sin(uv.x + cos(len)) + sin(u_time / 10.0);
   }
       
   vec3 color = vec3(
