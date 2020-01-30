@@ -9,8 +9,7 @@ uniform float u_time;
 #define blue vec3(0.0, 0.0, 1.0)
 #define green vec3(0.0, 1.0, 0.0)
 
-vec3 glowingLine(in vec2 uv, float thickness, vec3 color1, vec3 color2)
-{
+vec3 glowingLine(in vec2 uv, float thickness, vec3 color1, vec3 color2) {
   float line = abs(uv.y);  
   
   line = 1.0 / line * thickness;
@@ -23,13 +22,11 @@ vec3 glowingLine(in vec2 uv, float thickness, vec3 color1, vec3 color2)
   return vec3(line) * color;  
 }
 
-float hash(vec2 p) 
-{ 
+float hash(vec2 p) { 
   return fract(1e4 * sin(17.0 * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x)))); 
 }
 
-float noise(in vec2 uv) 
-{
+float noise(in vec2 uv) {
   vec2 i = floor(uv);
   vec2 f = fract(uv);
 
@@ -45,26 +42,23 @@ float noise(in vec2 uv)
             (d - b) * u.x * u.y;
 }
 
-mat2 rotate(float theta)
-{
+mat2 rotate(float theta) {
   return mat2(cos(theta), -sin(theta),
               sin(theta), cos(theta));    
 }
 
 #define NUM_OCTAVES 10
-float fbm(in vec2 uv) 
-{
+float fbm(in vec2 uv) {
   float v = 0.0;
   float a = 0.5;
   vec2 shift = vec2(100.0);
 
   mat2 rot = rotate(0.5);
   
-  for (int i = 0; i < NUM_OCTAVES; ++i) 
-  {
-      v += a * noise(uv);
-      uv = rot * uv * 2.0 + shift;
-      a *= 0.5;
+  for (int i = 0; i < NUM_OCTAVES; ++i) {
+    v += a * noise(uv);
+    uv = rot * uv * 2.0 + shift;
+    a *= 0.5;
   }
   
   return v;
@@ -72,13 +66,11 @@ float fbm(in vec2 uv)
 
 #define USE_FBM false
 #define OPTION_A false
-void main()
-{
+void main() {
   vec2 uv = gl_FragCoord.xy / u_resolution - 0.5;
   uv.x *= u_resolution.x / u_resolution.y;
   
-  if (USE_FBM)
-  {
+  if (USE_FBM) {
     float t = u_time * 0.1;
     float f = fbm(uv * 2.0 - t) * 0.1;
 
@@ -90,20 +82,15 @@ void main()
 
     uv *= length(vec2(uv.x, uv.y));
     uv.y += sin(f); 
-  } 
-  else
-  {
+  } else {
     uv.y += sin(uv.x * 0.1) * sin(uv.y * 10.0 + u_time);   
   }
   
   vec3 line;
 
-  if (OPTION_A)
-  {
+  if (OPTION_A) {
     line = glowingLine(uv, 0.0025, yellow, red) * 1.5;    
-  }
-  else
-  {
+  } else {
     float t = u_time * 0.5;
     float amplitude = 1.25;
 

@@ -3,13 +3,11 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 
-float hash(vec2 p) 
-{ 
+float hash(vec2 p) { 
   return fract(1e4 * sin(17.0 * p.x + p.y * 0.1) * (0.1 + abs(sin(p.y * 13.0 + p.x)))); 
 }
 
-float noise(vec2 x) 
-{
+float noise(vec2 x) {
   vec2 i = floor(x);
   vec2 f = fract(x);
 
@@ -23,8 +21,7 @@ float noise(vec2 x)
   return mix(a, b, u.x) + (c - a) * u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
 }
 
-float voronoi(in vec2 p) 
-{
+float voronoi(in vec2 p) {
   vec2 n = floor(p);
   vec2 f = fract(p);
   float md = 1.0;
@@ -51,8 +48,7 @@ float voronoi(in vec2 p)
 }
 
 #define BRIGHTNESS 0.55
-void main()
-{
+void main() {
   vec2 uv = gl_FragCoord.xy / u_resolution;
   float ar = u_resolution.x / u_resolution.y;
   float scale = 0.75;

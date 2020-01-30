@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## **[1.4.0]** - 30/01/2020
+
+### **Added**
+- Landscapes shader which runs through a few variants
+
+### **Modified**
+- All shaders formatted slightly differently as I now prefer doing GLSL with the braces directly after the parenthesis
+
 ## **[1.4.0]** - 23/11/2019
 
 ### **Added**

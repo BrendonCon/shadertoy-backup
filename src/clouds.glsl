@@ -3,19 +3,16 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_time;
 
-float random(in vec2 p) 
-{
+float random(in vec2 p) {
   return fract(sin(dot(p.xy, vec2(2.34, 0.2))) * 586.273458);   
 }
 
-mat2 rotate(float theta)
-{
+mat2 rotate(float theta) {
   return mat2(cos(theta), -sin(theta),
               sin(theta), cos(theta));
 }
 
-float noise(in vec2 st) 
-{
+float noise(in vec2 st) {
   vec2 i = floor(st);
   vec2 f = fract(st);
 
@@ -31,8 +28,7 @@ float noise(in vec2 st)
         (d - b) * u.x * u.y;
 }
 
-float fbm(in vec2 st) 
-{
+float fbm(in vec2 st) {
   const int octaves = 8;
   float value = 0.0;
   float amplitude = 0.5;
@@ -41,10 +37,10 @@ float fbm(in vec2 st)
   mat2 rot = rotate(0.5);
   
   for (int i = 0; i < octaves; i++) {
-      value += amplitude * noise(st);
-      st *= 2.0;
-      st *= rot;
-      amplitude *= 0.5;
+    value += amplitude * noise(st);
+    st *= 2.0;
+    st *= rot;
+    amplitude *= 0.5;
   }
   
   return value;
@@ -53,8 +49,7 @@ float fbm(in vec2 st)
 #define black vec3(0.0)
 #define white vec3(1.0)
 
-void main()
-{
+void main() {
   vec2 uv = gl_FragCoord.xy / u_resolution;
   float t = u_time * 0.5;
   

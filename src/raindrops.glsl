@@ -10,12 +10,10 @@ uniform float u_time;
 #define trailDropStrength 15.0
 #define S(a, b, t) smoothstep(a, b, t)
 
-vec2 rain(in vec2 uv, float t)
-{
+vec2 rain(in vec2 uv, float t) {
   t *= rainSpeed;
   
-  if (rainDisplacement)
-  {
+  if (rainDisplacement) {
     uv.x += sin(uv.y * 70.0) * 0.005;
     uv.y += sin(uv.x * 80.0) * 0.003; 
   }
@@ -49,10 +47,8 @@ vec2 rain(in vec2 uv, float t)
   float m2 = S(0.3 * (0.5 - st.y), 0.0, d) * S(-0.1, 0.1, st.y - p1.y);
 
   // borders debug
-  if (rainDebug)
-  {
-    if (st.x > 0.46 || st.y > 0.49)
-    {
+  if (rainDebug) {
+    if (st.x > 0.46 || st.y > 0.49) {
       m1 = 1.0;
     }  
   }
@@ -60,8 +56,7 @@ vec2 rain(in vec2 uv, float t)
   return vec2(m1 * o1 * mainDropStrength + m2 * o2 * trailDropStrength);
 }
 
-void main()
-{
+void main() {
   vec2 uv = gl_FragCoord.xy / u_resolution;
   uv *= u_resolution.x / u_resolution.y;
 
