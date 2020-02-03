@@ -120,12 +120,12 @@ vec4 landscapeLayers(vec2 uv, float t) {
 }
 
 void main() {
+  float t = u_time * 0.4;
+
   vec2 uv = gl_FragCoord.xy / u_resolution.xy - 0.5;
   uv.x *= u_resolution.x / u_resolution.y;
 
   vec4 color = vec4(0.0);
-  float t = u_time * 0.4;
-
   color = landscapeLayers(uv, t);
   color += rainSystem(uv, t);
   color = vignette(uv, color);
