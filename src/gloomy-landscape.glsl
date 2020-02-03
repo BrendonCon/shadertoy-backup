@@ -6,7 +6,7 @@ uniform vec2 u_resolution;
 
 vec4 landscape(in vec2 uv) {
   float y = uv.y + sin(uv.x * 0.423) + sin(uv.x) * 0.3;
-	float landscape = step(y, 0.0);  
+  float landscape = step(y, 0.0);
   return vec4(landscape);
 }
 
