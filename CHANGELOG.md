@@ -1,5 +1,10 @@
 # CHANGELOG
 
+## **[1.4.0]** - 04/02/2020
+
+### **Added**
+- Gloomy landscape shader
+
 ## **[1.4.0]** - 30/01/2020
 
 ### **Added**
