@@ -63,12 +63,12 @@ vec4 background(in vec2 uv) {
 
 vec4 rect(in vec2 uv, float width, float height, float alpha) {
   float mask = smoothstep(width, 0.0, abs(uv.x)) * smoothstep(height, height * 0.99, abs(uv.y));
-	return vec4(mask * alpha);    
+  return vec4(mask * alpha);
 }
 
 vec4 rect(in vec2 uv, float width, float height, float alpha, vec4 color) {
   vec4 mask = rect(uv, width, height, alpha);
-	return mask * color;    
+  return mask * color;
 }
 
 vec4 lines(in vec2 uv, float t) {
