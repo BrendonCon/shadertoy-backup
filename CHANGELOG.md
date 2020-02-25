@@ -1,6 +1,13 @@
 # CHANGELOG
 
-## **[1.4.0]** - 16/02/2016
+## **[1.4.0]** - 25/02/2020
+### **Added**
+- Space scene shader
+
+### **Fixed**
+- Changelog date for previous entry
+
+## **[1.4.0]** - 16/02/2020
 ### **Added**
 - Smokey sky shader
 
