@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 25/03/2020
+### **Added**
+- Ray marched domain repetition shader
+
 ## **[1.4.0]** - 25/02/2020
 ### **Added**
 - Space scene shader
