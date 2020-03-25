@@ -28,7 +28,7 @@ vec3 domainRep(in vec3 uv, in vec3 c) {
 #define SURF_DIST 0.01
 
 float rayMarch(vec3 rayOrigin, vec3 rayDirection) {
-	float dist = 0.0;
+  float dist = 0.0;
   
   for (int i = 0; i < MAX_STEPS; i++) {
     vec3 p = rayOrigin + rayDirection * dist;
@@ -41,7 +41,7 @@ float rayMarch(vec3 rayOrigin, vec3 rayDirection) {
 }
 
 vec3 getNormal(vec3 uv) {
-	float dist = getDist(uv);
+  float dist = getDist(uv);
   vec2 epsilon = vec2(0.01, 0.0);
   
   vec3 norm = dist - vec3(
