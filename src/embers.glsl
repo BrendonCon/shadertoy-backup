@@ -43,7 +43,7 @@ void main() {
   uv.x *= u_resolution.x / u_resolution.y;
 
   float dist = length(uv);
-  vec4 bg = vec4(120.0 / 255.0, 44.0 / 255.0, 0.0 / 255.0, 1.0);    
+  vec4 bg = vec4(0.47, 0.17, 0.0, 1.0);    
   vec4 color = vec4(vec3(1.0 - dist), 1.0) * bg * 1.25;
   color += smoothstep(0.5, 0., dist) * 0.1;
   color.rgb *= 1.0 - dist;
