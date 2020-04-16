@@ -3,6 +3,7 @@
 ## **[1.4.0]** - 16/04/2020
 ### **Added**
 - Embers shader
+- License to README
 
 ## **[1.4.0]** - 25/03/2020
 ### **Added**
