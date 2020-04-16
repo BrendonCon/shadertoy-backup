@@ -30,7 +30,7 @@ vec4 ember(in vec2 uv, float radius, float seed) {
   
   float alpha = 1.0 - t;
   float mask = circle(uv, radius, alpha);
-  vec4 orange = vec4(246.0 / 255.0, 96.0 / 255.0, 0.0, 1.0);
+  vec4 orange = vec4(0.96, 0.37, 0.0, 1.0);
   float glow = mix(0.125, 0.01, n);
   vec4 ember = vec4(1.0 / length(uv) * glow);
   ember *= orange * 2.0;
