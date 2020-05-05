@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 06/05/2020
+### **Added**
+- Simple sparks shader shader
+
 ## **[1.4.0]** - 16/04/2020
 ### **Added**
 - Embers shader
