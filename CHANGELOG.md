@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## **[1.4.0]** - 10/05/2020
+### **Added**
+- Common functions
+
+### **Changed**
+- Folder structure
+
+### **Updated**
+- Base template
+
 ## **[1.4.0]** - 06/05/2020
 ### **Added**
 - Simple sparks shader shader
