@@ -19,14 +19,13 @@ vec4 moon(in vec2 uv, float size) {
 vec4 wave(in vec2 uv) {
   vec4 color = vec4(0.0);
   float y = 0.0;
-  int t = int(mod(u_time * 0.25, 6.0));
+  int t = int(mod(u_time * 0.25, 5.0));
 
   if (t == 0) y = uv.y + sin(uv.x * 1.0 + u_time) * 0.125 + sin(uv.x * 2.0 - u_time * 0.2) * 0.13;
   if (t == 1) y = uv.y + abs(cos(uv.x) / sin(uv.x) * 2.0); // spikes
-  if (t == 2) y = uv.y + sin(uv.x * 1.0 + u_time) * 0.125 + sin(uv.x * 2.0 - u_time * 0.2) * 0.13; // dunes
-  if (t == 3) y = uv.y + step(abs(sin(uv.x)), 0.75); // step func
-  if (t == 4) y = uv.y + step(sin(uv.x), 0.5) + step(sin(uv.x * 0.5), 0.5) + step(sin(uv.x * 0.35), 0.7) + step(sin(uv.x * 0.835), 0.5); // city
-  if (t == 5) y = uv.y + sin(uv.x + sin(uv.x * 6.0) * 0.7); // teeth canyon
+  if (t == 2) y = uv.y + step(abs(sin(uv.x)), 0.75); // step func
+  if (t == 3) y = uv.y + step(sin(uv.x), 0.5) + step(sin(uv.x * 0.5), 0.5) + step(sin(uv.x * 0.35), 0.7) + step(sin(uv.x * 0.835), 0.5); // city
+  if (t == 4) y = uv.y + sin(uv.x + sin(uv.x * 6.0) * 0.7); // teeth canyon
 
   float layer = step(y, 0.5);
   return vec4(layer);
