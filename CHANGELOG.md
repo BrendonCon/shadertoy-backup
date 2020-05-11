@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 12/05/2020
+### **Added**
+- Colorful flames shader
+
 ## **[1.4.0]** - 10/05/2020
 ### **Added**
 - Common functions
