@@ -10,6 +10,12 @@ This is currently only suited to usage with GLSL canvas which can be setup as fo
 - Create a `glsl` file
 - Press **F1** and type: **Show glslCanvas**
 
+## Folder Structure
+- **src**: Source folder where our code lies
+  - **common**: Common functions housed here
+  - **shaders**: Fragment shaders live here
+  - **templates**: As you guessed, fragment shader base templates live here
+
 ## MIT License
 Copyright (c) 2020 Brendon Conradie
 
