@@ -3,6 +3,7 @@
 ## **[1.4.0]** - 23/05/2020
 ### **Added**
 - Health globe shader
+- Classic perlin noise to common functions
 
 ## **[1.4.0]** - 12/05/2020
 ### **Added**
