@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 01/06/2020
+### **Added**
+- Retro symmetry scene
+
 ## **[1.4.0]** - 23/05/2020
 ### **Added**
 - Health globe shader
