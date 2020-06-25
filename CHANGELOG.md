@@ -2,6 +2,7 @@
 
 ## **[1.4.0]** - 25/06/2020
 ### **Added**
+- Added "work in progress" shadowed planet shader
 - Godray with dust shader
 - 3d rotational functions
 - sdf functions for box and sphere
