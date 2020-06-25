@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 25/06/2020
+### **Added**
+- Godray with dust shader
+
 ## **[1.4.0]** - 01/06/2020
 ### **Added**
 - Retro symmetry scene
