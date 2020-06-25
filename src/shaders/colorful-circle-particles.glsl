@@ -38,7 +38,6 @@ void main() {
     float g = fract(sin(i * 1567.782) * 56892.13);
     float b = fract(sin(i * 98454.25) * 2346.13);
     vec3 color = vec3(r, g, b);
-
     float sizeVariance = alpha * 0.01;
     float radius = 0.01 + sizeVariance;
     float radiusOffset = 0.02 + sizeVariance;
