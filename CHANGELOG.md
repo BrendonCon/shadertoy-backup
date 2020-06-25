@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 26/06/2020
+### **Added**
+- Colorful circle particles shader
+
 ## **[1.4.0]** - 25/06/2020
 ### **Added**
 - Ray marching union shader
