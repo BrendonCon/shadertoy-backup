@@ -17,7 +17,6 @@ void main() {
 
   for (float i = 0.0; i < PARTICLE_COUNT; i++) {
     float turb = fract(sin(i * 32342.25) * 765892.13);
-
     t = fract(t) + turb;
 
     float n = ((i + 1.0) / PARTICLE_COUNT);
