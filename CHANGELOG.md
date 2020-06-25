@@ -4,6 +4,7 @@
 ### **Added**
 - Godray with dust shader
 - 3d rotational functions
+- sdf functions for box and sphere
 
 ### **Changed**
 - Update health shader mask edge and speed
