@@ -70,8 +70,8 @@ vec4 healthGlobe(in vec2 uv, float scale, float speed) {
   
   vec2 mouse = u_mouse.xy / u_resolution.xy * 2.0 - 1.0;
   vec2 maskPos = uv - vec2(mouse.y);
-  float maskWave = fbm(maskPos * 2.0 - t * 0.5) * 0.05;
-  vec4 mask = vec4(smoothstep(0.2, 0.19, maskPos.y - maskWave));
+  float maskWave = fbm(maskPos * 2.0 - t * 0.35) * 0.05;
+  vec4 mask = vec4(smoothstep(0.2, 0.175, maskPos.y - maskWave));
   color *= mask;  
 
   float cloudSpeed = t * 0.3;

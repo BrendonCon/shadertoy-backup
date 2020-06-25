@@ -4,6 +4,9 @@
 ### **Added**
 - Godray with dust shader
 
+### **Changed**
+- Update health shader mask edge and speed
+
 ## **[1.4.0]** - 01/06/2020
 ### **Added**
 - Retro symmetry scene
