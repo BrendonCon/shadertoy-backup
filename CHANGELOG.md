@@ -1,5 +1,28 @@
 # CHANGELOG
 
+## **[1.4.0]** - 01/06/2020
+### **Added**
+- Retro symmetry scene
+
+## **[1.4.0]** - 23/05/2020
+### **Added**
+- Health globe shader
+- Classic perlin noise to common functions
+
+## **[1.4.0]** - 12/05/2020
+### **Added**
+- Colorful flames shader
+
+## **[1.4.0]** - 10/05/2020
+### **Added**
+- Common functions
+
+### **Changed**
+- Folder structure
+
+### **Updated**
+- Base template
+
 ## **[1.4.0]** - 06/05/2020
 ### **Added**
 - Moody god ray shader (still needs work)
