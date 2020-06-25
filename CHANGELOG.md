@@ -3,6 +3,7 @@
 ## **[1.4.0]** - 25/06/2020
 ### **Added**
 - Godray with dust shader
+- 3d rotational functions
 
 ### **Changed**
 - Update health shader mask edge and speed
