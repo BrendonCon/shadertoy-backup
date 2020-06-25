@@ -2,6 +2,7 @@
 
 ## **[1.4.0]** - 25/06/2020
 ### **Added**
+- Ray marching union shader
 - Godray with dust shader
 - 3d rotational functions
 - sdf functions for box and sphere
