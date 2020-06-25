@@ -29,7 +29,6 @@
 
 ## **[1.4.0]** - 06/05/2020
 ### **Added**
-- Moody god ray shader (still needs work)
 - Simple sparks shader shader
 
 ## **[1.4.0]** - 16/04/2020
