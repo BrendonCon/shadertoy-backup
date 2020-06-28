@@ -1,7 +1,6 @@
 precision mediump float;
 
 uniform vec2 u_resolution;
-uniform vec2 u_mouse;
 uniform float u_time;
 
 const float PI = 3.1415926535;
@@ -21,12 +20,10 @@ float hash(vec2 p) {
 float noise(in vec2 uv) {
   vec2 i = floor(uv);
   vec2 f = fract(uv);
-
   float a = hash(i);
   float b = hash(i + vec2(1.0, 0.0));
   float c = hash(i + vec2(0.0, 1.0));
   float d = hash(i + vec2(1.0, 1.0));
-
   vec2 u = f * f * (3.0 - 2.0 * f);
 
   return mix(a, b, u.x) +
@@ -35,8 +32,9 @@ float noise(in vec2 uv) {
 }
 
 mat2 rotate(float theta) {
-  return mat2(cos(theta), -sin(theta),
-              sin(theta), cos(theta));    
+  float c = cos(theta);
+  float s = sin(theta);
+  return mat2(c, -s, s, c);    
 }
 
 #define NUM_OCTAVES 20
@@ -58,13 +56,13 @@ float fbm(in vec2 uv) {
 vec4 background(in vec2 uv) {
   vec4 color;
   
-  vec4 dark = vec4(23.0 / 255.0, 8.0 / 255.0, 33.0 / 255.0, 1.0) * 1.75;
+  vec4 dark = vec4(0.09, 0.01, 0.129, 1.0) * 1.75;
   color += dark;
 
-  vec4 highlight = vec4(177.0 / 255.0, 55.0 / 255.0, 169.0 / 255.0, 1.0);
+  vec4 highlight = vec4(0.69, 0.219, 0.47, 1.0);
   color += ((1.0 - length(uv)) * highlight) * 0.2;
 
-  vec4 glow = vec4(173.0 / 255.0, 56.0 / 255.0, 120.0 / 255.0, 1.0);
+  vec4 glow = vec4(0.67, 0.219, 0.47, 1.0);
   color += (smoothstep(0.65, 0.0, length(uv)) * glow) * 0.5;
 
   float n = noise(uv * 1000.0);
@@ -82,21 +80,15 @@ vec4 layer(in vec2 uv) {
   vec2 guv = fract(uv) - 0.5;  
   float clouds = fbm(uv * 5.0 * rotate(u_time * 0.001));
   float tri = polygon(guv, 0.1, 3.0, 0.025);
-  vec3 c1 = vec3(56.0 / 255.0, 17.0 / 255.0, 52.0 / 255.0);
-  vec3 c2 = vec3(17.0 / 255.0, 6.0 / 255.0, 21.0 / 255.0);
-  vec4 color = vec4(tri);
-  vec4 outline = mix(color, vec4(clouds * clouds * 0.3), tri) * 3.0;
+  vec4 color = mix(vec4(tri), vec4(clouds * clouds * 0.3), tri) * 3.0;
   float stars = smoothstep(0.025, 0.0, length(fract(uv * 5.0)- 0.5));
   
-  return outline + stars + (clouds * clouds) * 0.6;
+  return color + stars + (clouds * clouds) * 0.6;
 }
 
 vec4 layers(in vec2 uv) {
 	vec4 color;
   float t = u_time * 0.1;
-  
-  vec2 mouse = u_mouse.xy / u_resolution.xy - 0.5;
-  uv += mouse * 0.0;
   
   for (float i = 0.0; i <= 1.0; i += 1.0 / 8.0) {
     float depth = fract(i + t);
@@ -109,9 +101,7 @@ vec4 layers(in vec2 uv) {
   return color * 0.5;
 }
 
-vec4 scanlines(in vec2 uv) {
-  float alpha = 0.045;
-  float scale = 800.0;
+vec4 scanlines(in vec2 uv, float scale, float alpha) {
 	return vec4(sin(uv.y * scale)) * alpha;
 }
 
@@ -126,7 +116,7 @@ void main() {
   vec4 color;
   color = background(uv); 
   color += layers(uv);
-  color += scanlines(uv);
+  color += scanlines(uv, 800.0, 0.045);
   color *= vignette(uv);
   color.a = 1.0;
 
