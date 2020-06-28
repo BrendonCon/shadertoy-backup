@@ -37,7 +37,7 @@ mat2 rotate(float theta) {
   return mat2(c, -s, s, c);    
 }
 
-#define NUM_OCTAVES 20
+#define NUM_OCTAVES 10
 float fbm(in vec2 uv) {
   float v = 0.0;
   float a = 0.5;
