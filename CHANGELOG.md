@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 28/06/2020
+### **Added**
+- Add spacey triangles shader (lol)
+
 ## **[1.4.0]** - 26/06/2020
 ### **Added**
 - Colorful circle particles shader
