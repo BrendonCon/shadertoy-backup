@@ -87,7 +87,7 @@ vec4 layer(in vec2 uv) {
 }
 
 vec4 layers(in vec2 uv) {
-	vec4 color;
+  vec4 color;
   float t = u_time * 0.1;
   
   for (float i = 0.0; i <= 1.0; i += 1.0 / 8.0) {
@@ -102,7 +102,7 @@ vec4 layers(in vec2 uv) {
 }
 
 vec4 scanlines(in vec2 uv, float scale, float alpha) {
-	return vec4(sin(uv.y * scale)) * alpha;
+  return vec4(sin(uv.y * scale)) * alpha;
 }
 
 float vignette(vec2 uv) {
