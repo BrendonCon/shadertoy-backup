@@ -2,6 +2,7 @@
 
 ## **[1.4.0]** - 10/08/2020
 ### **Added**
+- Add basic phong lighting model ray marching template
 - Added very basic ray marching template
 
 ## **[1.4.0]** - 06/08/2020
