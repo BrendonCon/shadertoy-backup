@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 10/08/2020
+### **Added**
+- Added very basic ray marching template
+
 ## **[1.4.0]** - 06/08/2020
 ### **Added**
 - Added ray marched infinite grid shader
