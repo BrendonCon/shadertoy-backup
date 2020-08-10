@@ -4,14 +4,14 @@ uniform vec2 u_resolution;
 uniform float u_time;
 
 float sphere(vec3 ray, float radius) {
-	return length(ray) - radius;    
+  return length(ray) - radius;
 }
 
 float scene(vec3 ray) {
   float sphere = sphere(ray - vec3(0.0, 1.0, 0.0), 0.4);
   float plane = ray.y;
   float sceneObjects = min(sphere, plane);
-	return sceneObjects;    
+  return sceneObjects;
 }
 
 float march(vec3 ro, vec3 rd) {
