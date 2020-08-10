@@ -8,7 +8,7 @@ float sphere(vec3 ray, float radius) {
 }
 
 float scene(vec3 ray) {
-  float sphere = sphere(ray - vec3(0.0, 0.75, 0.0), 0.4);
+  float sphere = sphere(ray - vec3(0.0, 0.9, 0.0), 0.4);
   float plane = ray.y;
   float sceneObjects = min(sphere, plane);
   return sceneObjects;
