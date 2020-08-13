@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 13/08/2020
+### **Added**
+- Add ray marching mirrored cubes shader
+
 ## **[1.4.0]** - 10/08/2020
 ### **Added**
 - Add ray march reflections shader experimental
