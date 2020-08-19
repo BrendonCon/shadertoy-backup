@@ -53,11 +53,11 @@ float map(in vec3 p) {
 }
 
 vec3 getNormal(in vec3 p) {
-	vec2 e = vec2(0.01, 0);
+  vec2 e = vec2(0.01, 0.0);
 
-	return normalize(vec3(
-    map(p + e.xyy) - map(p - e.xyy), 
-    map(p + e.yxy) - map(p - e.yxy),	
+  return normalize(vec3(
+    map(p + e.xyy) - map(p - e.xyy),
+    map(p + e.yxy) - map(p - e.yxy),
     map(p + e.yyx) - map(p - e.yyx)
   ));
 }
