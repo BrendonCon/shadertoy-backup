@@ -3,6 +3,7 @@
 ## **[1.4.0]** - 20/08/2020
 ### **Added**
 - Add anti alising ray marching shader with phong model
+- Add sdfPlane function
 
 ## **[1.4.0]** - 13/08/2020
 ### **Added**
