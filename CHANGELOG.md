@@ -3,6 +3,7 @@
 ## **[1.4.0]** - 25/08/2020
 ### **Added**
 - Add basic material system shader
+- Add reflecting room shader
 
 ## **[1.4.0]** - 20/08/2020
 ### **Added**
