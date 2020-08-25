@@ -89,10 +89,8 @@ vec3 getMaterial(vec3 ro, vec3 rd, vec3 ray, float matId) {
   return color;
 }
 
-float scene(vec3 p, out float matId)
-{
-  sceneObj sceneObjs[5];
-  sceneObjs = getSceneObjs(p);
+float scene(vec3 p, out float matId) {
+  sceneObj sceneObjs[5] = getSceneObjs(p);
   float d = 10e7; 
 
   for (int i = 0; i < sceneObjs.length(); i++) {
