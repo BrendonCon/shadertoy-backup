@@ -2,7 +2,6 @@ precision mediump float;
 
 uniform vec2 u_resolution;
 uniform float u_time;
-uniform vec2 u_mouse;
 
 #define SURF_DIST 0.01
 #define FAR 90.0
@@ -19,7 +18,7 @@ vec4 box(vec3 p, vec3 b, vec3 mat) {
 }
 
 vec4 minObj(in vec4 a, in vec4 b) {
-	return a.w < b.w ? a : b;    
+  return a.w < b.w ? a : b;
 }
 
 vec4 scene(in vec3 p) {
@@ -43,8 +42,8 @@ vec4 scene(in vec3 p) {
   obj = minObj(obj, box4);
   obj = minObj(obj, box5);
   obj = minObj(obj, box6);
-    
-	return obj;    
+
+  return obj;    
 }
 
 vec4 march(in vec3 ro, in vec3 rd) {
@@ -97,8 +96,8 @@ float getLight(in vec3 p) {
 }
 
 vec3 getColor(in vec3 ro, in vec3 rd) {
-	vec3 color = vec3(0.0);
-    
+  vec3 color = vec3(0.0);
+
   for (float i = 0.0; i < 5.0; i++) {
     vec4 scene = march(ro, rd);
     vec3 p = ro + scene.w * rd;
