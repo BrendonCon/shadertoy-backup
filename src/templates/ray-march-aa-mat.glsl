@@ -79,10 +79,7 @@ vec3 render(vec2 fragCoord) {
     float ambStr = 0.1;
     vec3 amb = ambStr * ambColor;
 
-    float fakeFresnelStr = 0.15;
-    float fakeFresnel = smoothstep(0.3, 0.0, p.z) * fakeFresnelStr;
-
-    color = amb + diff + fakeFresnel;
+    color = amb + diff;
   }
 
   return color;
