@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 02/09/2020
+### **Added**
+- Add ray march template with anti aliasing and simple material system
+
 ## **[1.4.0]** - 25/08/2020
 ### **Added**
 - Add basic material system shader
