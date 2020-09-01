@@ -11,8 +11,7 @@ float scene(vec3 p, out int matId) {
   float sphere = sphere(p, 0.5);
   float plane = p.y + 1.0;
 
-  float dist = 10e7;
-  dist = min(dist, sphere);
+  float dist = sphere;
   dist = min(dist, plane);
 
   if (dist == sphere) matId = 1;
