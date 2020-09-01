@@ -9,11 +9,14 @@ float sphere(vec3 p, float radius) {
 
 float scene(vec3 p, out int matId) {
   float sphere = sphere(p, 0.5);
+  float plane = p.y + 1.0;
 
   float dist = 10e7;
   dist = min(dist, sphere);
+  dist = min(dist, plane);
 
   if (dist == sphere) matId = 1;
+  if (dist == plane) matId = 2;
 
   return dist;
 }
@@ -66,7 +69,7 @@ vec3 render(vec2 fragCoord) {
 
   vec3 color;
 
-  if (matId == 1) {
+  if (matId != -1) {
     vec3 n = normal(p);
     vec3 l = normalize(vec3(0.25, 1.0, 1.0) - p);
     float lambert = max(dot(n, l), 0.0);
