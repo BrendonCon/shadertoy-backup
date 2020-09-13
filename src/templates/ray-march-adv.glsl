@@ -32,11 +32,11 @@ struct sceneObj
 /*
   @name: intersection
   @desc: intersection point data
-      provides distance(dist), 
-      steps taken (steps),
-      intersection point (p)
-      normal vector (n)
-      scene object we intersect with (obj)
+    provides distance(dist), 
+    steps taken (steps),
+    intersection point (p)
+    normal vector (n)
+    scene object we intersect with (obj)
 */
 
 struct intersection 
@@ -119,8 +119,8 @@ mat3 rotateZ(float theta)
 // =========== Utilities =========== 
 
 /*
-	@name: minObj
-	@desc: compares to objects and returns the one closer
+  @name: minObj
+  @desc: compares to objects and returns the one closer
 */
 
 sceneObj minObj(sceneObj a, sceneObj b)
@@ -132,9 +132,9 @@ sceneObj minObj(sceneObj a, sceneObj b)
 // =========== Scene =========== 
 
 /*
-	@name: scene
-	@desc: essentially our scene graph
-		  used to check distances against all objects in scene
+  @name: scene
+  @desc: essentially our scene graph
+      used to check distances against all objects in scene
 */
 
 sceneObj scene(vec3 p)
@@ -155,9 +155,9 @@ sceneObj scene(vec3 p)
 }
 
 /*
-	@name: normal
-	@desc: compute the normal to a vector using derivatives
-		  returns orthogonal vector to point
+  @name: normal
+  @desc: compute the normal to a vector using derivatives
+    returns orthogonal vector to point
 */
 
 vec3 normal(vec3 p)
@@ -171,10 +171,10 @@ vec3 normal(vec3 p)
 }
 
 /*
-	@name: trace
-	@desc: our main trace routine
-		  check distances to scene objects
-		  returns an intersection with data about object and intersection
+  @name: trace
+  @desc: our main trace routine
+      check distances to scene objects
+      returns an intersection with data about object and intersection
 */
     
 #define MAX_STEPS 256
@@ -209,8 +209,8 @@ intersection trace(vec3 ro, vec3 rd)
 }
 
 /*
-	@name: render
-	@desc: calls trace and renders the scene
+  @name: render
+  @desc: calls trace and renders the scene
 */
 
 vec4 render(vec2 fragCoord)
@@ -238,8 +238,8 @@ vec4 render(vec2 fragCoord)
 }
 
 /*
-	@name: main
-	@desc: main entry point, calls render to assigns color out
+  @name: main
+  @desc: main entry point, calls render to assigns color out
 */
 
 void main()
