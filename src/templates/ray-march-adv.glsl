@@ -120,7 +120,7 @@ mat3 rotateZ(float theta)
 
 /*
   @name: minObj
-  @desc: compares to objects and returns the one closer
+  @desc: compares objects and returns the one closer
 */
 
 sceneObj minObj(sceneObj a, sceneObj b)
