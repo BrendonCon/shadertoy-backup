@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 13/09/2020
+### **Added**
+- Add ray march advanced template, like the architecture better
+
 ## **[1.4.0]** - 02/09/2020
 ### **Added**
 - Add ray march template with anti aliasing and simple material system
