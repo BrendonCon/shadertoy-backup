@@ -10,12 +10,10 @@ float hash(vec2 p) {
 float noise(in vec2 uv) {
   vec2 i = floor(uv);
   vec2 f = fract(uv);
-
   float a = hash(i);
   float b = hash(i + vec2(1.0, 0.0));
   float c = hash(i + vec2(0.0, 1.0));
   float d = hash(i + vec2(1.0, 1.0));
-
   vec2 u = f * f * (3.0 - 2.0 * f);
 
   return mix(a, b, u.x) +
@@ -72,11 +70,11 @@ struct directionalLight {
 };
     
 float sphere(vec3 p, float radius) {
-	return length(p) - radius;    
+  return length(p) - radius
 }
 
 float plane(vec3 p) {
-	return p.y;    
+  return p.y;
 }
 
 float box(vec3 p, vec3 b)  {
@@ -90,11 +88,9 @@ sceneObj minObj(sceneObj a, sceneObj b) {
 }
     
 sceneObj map(vec3 p) {
-  p.y += pow(fbm(p.xz * 0.15) * 4.0, 1.5);
-
   sceneObj p1;
+  p.y += pow(fbm(p.xz * 0.15) * 4.0, 1.5);
   p1.dist = box(p + vec3(0, -3.1, 0), vec3(40, 0.01, 40));
-
   return p1;
 }
 
