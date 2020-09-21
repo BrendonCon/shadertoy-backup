@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 21/09/2020
+### **Added**
+- Add snowy mountains shader
+
 ## **[1.4.0]** - 13/09/2020
 ### **Added**
 - Add ray march advanced template, like the architecture better
