@@ -182,9 +182,8 @@ vec3 render(vec2 fragCoord) {
   cam.origin = vec3(0, 3, 6.5);
   cam.direction = normalize(vec3(uv, -1));
 
-  vec3 color;
-  vec3 bgColor = vec3(0.4, 0.75, 1.0) - 1.1 * cam.direction.y;
-  color = mix(bgColor, vec3(0.7, 0.75, 0.8), exp(-3.0 * (cam.direction.y + 0.05)));
+  vec3 color = vec3(0.4, 0.75, 1.0) - 1.1 * cam.direction.y;
+  color = mix(color, vec3(0.7, 0.75, 0.8), exp(-3.0 * (cam.direction.y + 0.05)));
 
   intersection i = march(cam.origin, cam.direction);
 
