@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 28/09/2020
+### **Added**
+- Add outer glow ray march experiment shader
+
 ## **[1.4.0]** - 21/09/2020
 ### **Added**
 - Add snowy mountains shader
