@@ -41,7 +41,7 @@ float noise(vec3 p) {
 }
 
 float sphere(vec3 p, float radius) {
-	return length(p) - radius;    
+  return length(p) - radius;
 }
 
 float box(vec3 p, vec3 size) {
