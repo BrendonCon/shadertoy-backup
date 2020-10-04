@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 04/10/2020
+### **Added**
+- Capsule sdf function
+
 ## **[1.4.0]** - 28/09/2020
 ### **Added**
 - Add outer glow ray march experiment shader
