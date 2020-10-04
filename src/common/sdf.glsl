@@ -1,10 +1,9 @@
-float sdfSphere(vec3 uv, vec4 sphere) {
-  return length(uv - sphere.xyz) - sphere.w;
+float sdfSphere(vec3 p, float radius) {
+  return length(p) - radius;
 }
 
-float sdfBox(vec3 p, vec3 b) {
-  vec3 q = abs(p) - b;
-  return length(max(q, 0.0)) + min(max(q.x, max(q.y, q.z)), 0.0);    
+float sdfBox(vec3 p, vec3 size) {
+  return length(max(abs(p) - size, 0.0));
 }
 
 float sdfPlane(vec3 p, vec4 n, float h) {
@@ -24,6 +23,6 @@ float sdfCapsule(vec3 p, vec3 a, vec3 b, float radius) {
 }
 
 float sdfTorus(vec3 p, float r1, float r2) {
-  float x = length(p.xz) - r2;
-  return length(vec2(x, p.y)) - r1;
+  float x = length(p.xz) - r1;
+  return length(vec2(x, p.y)) - r2;
 }
