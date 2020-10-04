@@ -22,3 +22,8 @@ float sdfCapsule(vec3 p, vec3 a, vec3 b, float radius) {
 
   return length(p - closest) - radius;
 }
+
+float sdfTorus(vec3 p, float r1, float r2) {
+  float x = length(p.xz) - r2;
+  return length(vec2(x, p.y)) - r1;
+}
