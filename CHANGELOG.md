@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 12/10/2020
+### **Added**
+- Trippy torus shader
+
 ## **[1.4.0]** - 04/10/2020
 ### **Added**
 - Capsule sdf function
