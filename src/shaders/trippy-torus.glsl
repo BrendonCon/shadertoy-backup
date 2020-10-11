@@ -131,22 +131,7 @@ vec3 envMap(vec3 rd) {
   return mix(vec3(0.4, 0.2, 0.1), vec3(0.1, 0.25, 1), x);
 }
 
-vec3 render(vec2 fragCoord) {
-  vec2 uv = fragCoord / u_resolution.xy - 0.5;
-  uv.x *= u_resolution.x / u_resolution.y;
-
-  ray camera;
-  camera.origin = vec3(0, 0, 6);
-  camera.direction = normalize(vec3(uv, -1));
-
-  marchConfig config;
-  config.BIAS = 0.75;
-  config.MAX_STEPS = 256;
-  config.FAR = 256.0;
-  config.NEAR = 0.001;
-
-  vec3 ro = camera.origin;
-  vec3 rd = camera.direction;
+vec3 computeColor(vec3 ro, vec3 rd, marchConfig config) {
   vec3 color = envMap(rd);
   
   for (float i = 0.0; i < 4.0; i++) {
@@ -185,6 +170,23 @@ vec3 render(vec2 fragCoord) {
   }
 
   return color;
+}
+
+vec3 render(vec2 fragCoord) {
+  vec2 uv = fragCoord / u_resolution.xy - 0.5;
+  uv.x *= u_resolution.x / u_resolution.y;
+
+  ray camera;
+  camera.origin = vec3(0, 0, 6);
+  camera.direction = normalize(vec3(uv, -1));
+
+  marchConfig config;
+  config.BIAS = 0.75;
+  config.MAX_STEPS = 256;
+  config.FAR = 256.0;
+  config.NEAR = 0.001;
+
+  return computeColor(camera.origin, camera.direction, config);
 }
 
 #define AA
