@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** - 14/10/2020
+### **Added**
+- Add pixel machine tribute shader
+
 ## **[1.4.0]** - 12/10/2020
 ### **Added**
 - Trippy torus shader
