@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 21/02/2020
+### **Added**
+- Sphere march reflections shader
+
 ## **[1.4.0]** - 14/10/2020
 ### **Added**
 - Add pixel machine tribute shader
