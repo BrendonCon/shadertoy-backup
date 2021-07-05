@@ -1,6 +1,6 @@
 # CHANGELOG
 
-- 18/02/2021
+## **[1.4.0]** 18/02/2021
 ### **Added**
 - Add cube recursion shader
 
