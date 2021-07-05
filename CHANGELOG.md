@@ -1,5 +1,10 @@
 # CHANGELOG
 
+
+## **[1.4.0]** 19/02/2021
+### **Added**
+- Add simplest ray tracer shader
+
 ## **[1.4.0]** 18/02/2021
 ### **Added**
 - Add cube recursion shader
