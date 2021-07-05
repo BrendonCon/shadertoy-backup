@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## **[1.4.0]** 05/07/2021
+### **Added**
+- Retro cubism shader
+
 ## **[1.4.0]** 19/02/2021
 ### **Added**
 - Add simplest ray tracer shader
